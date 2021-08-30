@@ -50,10 +50,10 @@
 
 <!-- SASS -->
 {{ $mainStyle := resources.Get "/sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $mainStyle.Permalink }}">
+<link rel="stylesheet" href="{{ $mainStyle.RelPermalink }}">
 
 {{ $scanlinesStyle := resources.Get "/sass/scanlines.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $scanlinesStyle.Permalink }}">
+<link rel="stylesheet" href="{{ $scanlinesStyle.RelPermalink }}">
 
 {{ $glitchStyle := resources.Get "/sass/glitch.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $glitchStyle.Permalink }}">
+<link rel="stylesheet" href="{{ $glitchStyle.RelPermalink }}">

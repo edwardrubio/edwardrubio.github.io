@@ -1,6 +1,7 @@
 baseURL = "https://www.edwardrubio.com/"
 languageCode = "en-us"
 title = "Edward Rubio"
+publishDir = "docs"
 
 [params]
 author = "Edward Rubio"

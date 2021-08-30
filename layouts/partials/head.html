@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- If the page has a custom description, use it.
+     Otherwise, if it's a page make the summary it's description.
+     If it's not a page make the generic site description it's description.
+-->
+{{ with .Description }}
+    <meta name="description" content="{{ . }}">
+{{ else }}
+    {{ if .IsPage }}
+        <meta name="description" content="{{ .Summary }}">
+    {{ else }}
+        <meta name="description" content="{{ site.Params.description }}">
+    {{ end }}
+{{ end }}
+
+<meta name="author" content="{{ site.Params.author }}">
+
+<!--PAGE TITLE-->
+<!-- If the page's title is the same as the site's, make that the title for the page.
+     Otherwise, concatonate the titles like this "PAGETITLE | SITETITLE".
+-->
+<title>
+    {{ if eq .Title site.Title }}
+        {{ site.Title }}
+    {{ else }}
+        {{ .Title }} | {{ site.Title }}
+    {{ end }}
+</title>
+
+<link rel="icon" 
+      type="image/png" 
+      href="favicon.png">
+
+<!--CANONICAL LINK-->
+<!-- Tells search engines that where ever this page ends up, it's a 
+     original copy is located here.
+-->
+<link rel="canonical" href="{{ .RelPermalink }}">
+
+<!-- Include external links to other output formats for this page.
+-->
+{{ range .AlternativeOutputFormats }}
+    {{ printf "<link rel=%q type=%q href=%q title=%q>" .Rel .MediaType .RelPermalink site.Title | safeHTML }}
+{{ end }}
+
+<!-- CSS -->
+<!--link href="{{ "main.css" | absURL }}" rel="stylesheet">-->
+
+<!-- SASS -->
+{{ $mainStyle := resources.Get "/sass/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $mainStyle.Permalink }}">
+
+{{ $scanlinesStyle := resources.Get "/sass/scanlines.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $scanlinesStyle.Permalink }}">
+
+{{ $glitchStyle := resources.Get "/sass/glitch.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $glitchStyle.Permalink }}">

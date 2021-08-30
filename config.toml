@@ -1,0 +1,7 @@
+baseURL = "https://www.edwardrubio.com/"
+languageCode = "en-us"
+title = "Edward Rubio"
+
+[params]
+author = "Edward Rubio"
+description = "My personal webpage on the interwebs."

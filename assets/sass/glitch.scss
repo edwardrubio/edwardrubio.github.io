@@ -1,0 +1,43 @@
+/*CREDIT: https://codepen.io/hi-im-si/pen/oXyqjG*/
+
+$primaryColor: #fe8c00;
+$secondaryColor: #181818 41.67%;
+$steps: 5;
+
+.glitch {
+  position: relative;
+  transform: scale3d(1, 1, 1);
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background: $secondaryColor;
+    color: $primaryColor;
+    clip: rect(0, 900px, 0, 0);
+  }
+
+  &::before {
+    left: 7px;
+    text-shadow: 1px 0 green;
+    animation: glitch-effect 3s infinite steps(5, end) alternate-reverse;
+  }
+
+  &::after {
+    left: 3px;
+    text-shadow: -1px 0 red;
+    animation: glitch-effect 2s infinite steps(5, end) alternate-reverse;
+  }
+}
+
+@keyframes glitch-effect {
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+    }
+  }
+}

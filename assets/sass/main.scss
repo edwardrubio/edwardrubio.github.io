@@ -1,0 +1,189 @@
+@font-face {
+    font-family: VT323;
+    src: url("/VT323-Regular.ttf");
+}
+
+html {
+    background: linear-gradient(180deg, #181818 41.67%, #2f1a00 100%);
+    height: 100vh;
+    font-family: VT323;
+    text-shadow: 0 0 5px #c46c00;
+    box-sizing: border-box;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: repeating-linear-gradient(
+            0deg,
+            rgba(black, 0.15),
+            rgba(black, 0.15) 1px,
+            transparent 1px,
+            transparent 2px
+        );
+        pointer-events: none;
+    }
+}
+
+body {
+    position: relative;
+    padding: 30px 50px 30px 50px;
+    margin: 0px;
+    height: 100vh;
+    box-sizing: border-box;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    animation: shrinkdown 1s steps(3, end) forwards;
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+::selection {
+    background: #0080ff;
+    text-shadow: none;
+}
+
+.decorator-bar {
+    height: 20px;
+    width: 100%;
+    background-color: #fe8c00;
+    position: relative;
+    padding-right: 0px;
+    box-sizing: border-box;
+}
+
+.title {
+    position: relative;
+    color: #fe8c00;
+    font-size: 5rem;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.235em;
+}
+
+.main-nav {
+    list-style-type: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+}
+
+.main-nav li {
+    margin: 30px;
+}
+
+.main-nav a {
+    list-style-type: none;
+    text-decoration: none;
+    color: #fe8c00;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.main-nav a:hover {
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    background-color: #fe8c00;
+}
+
+/*ANIMATIONS**********************/
+
+@keyframes shrinkdown {
+        0% {
+            clip-path: polygon(0 0%, 100% 0%, 100% 0, 0% 0);
+        }
+    
+        10% {
+            clip-path: polygon(0 0%, 100% 0%, 100% 10%, 0% 10%);
+        }
+    
+        20% {
+            clip-path: polygon(0 0%, 100% 0%, 100% 20%, 0% 20%);
+        }
+    
+        30% {
+            clip-path: polygon(0 0%, 100% 0%, 100% 30%, 0% 30%);
+        }
+    
+        40% {
+            clip-path: polygon(0 0%, 100% 0%, 100% 40%, 0% 40%);
+        }
+    
+        50% {
+            clip-path: polygon(0 0%, 100% 0%, 100% 50%, 0% 50%);
+        }
+    
+        60% {
+            clip-path: polygon(0 0%, 100% 0%, 100% 60%, 0% 60%);
+        }
+    
+        70% {
+            clip-path: polygon(0 0%, 100% 0%, 100% 70%, 0% 70%);
+        }
+    
+        80% {
+            clip-path: polygon(0 0%, 100% 0%, 100% 80%, 0% 80%);
+        }
+    
+        90% {
+            clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0% 90%);
+        }
+    
+        100% {
+            clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+  }
+  
+  @keyframes shrinkup {
+        0% {
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+        }
+    
+        10% {
+            clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0% 100%);
+        }
+    
+        20% {
+            clip-path: polygon(0 80%, 100% 80%, 100% 100%, 0% 100%);
+        }
+    
+        30% {
+            clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0% 100%);
+        }
+    
+        40% {
+            clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0% 100%);
+        }
+    
+        50% {
+            clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+        }
+    
+        60% {
+            clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0% 100%);
+        }
+    
+        70% {
+            clip-path: polygon(0 30%, 100% 30%, 100% 100%, 0% 100%);
+        }
+    
+        80% {
+            clip-path: polygon(0 20%, 100% 20%, 100% 100%, 0% 100%);
+        }
+    
+        90% {
+            clip-path: polygon(0 10%, 100% 10%, 100% 100%, 0% 100%);
+        }
+    
+        100% {
+            clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+  }

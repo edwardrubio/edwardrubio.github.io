@@ -31,7 +31,8 @@ body {
     position: relative;
     padding: 30px 50px 30px 50px;
     margin: 0px;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     box-sizing: border-box;
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
     animation: shrinkdown 1s steps(3, end) forwards;
